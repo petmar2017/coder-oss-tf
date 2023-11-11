@@ -101,16 +101,14 @@ print_green "Setting up Kubernetes configurations..."
 ./bin/kubectl create namespace coder-workstations
 if [ $? -ne 0 ]; then
     print_red "Error creating Kubernetes namespace. Exiting..."
-    exit 1
 fi
 
 # Apply role and role binding configurations
-./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-role-binding.yaml || { print_red "Error applying ./azure-aks/kubectl-commands/coder-role-binding.yaml. Exiting..."; exit 1; }
-./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-workstations-role.yaml || { print_red "Error applying ./azure-aks/kubectl-commands/coder-workstations-role.yaml. Exiting..."; exit 1; }
-./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-workstations-role-binding.yaml || { print_red "Error applying ./azure-aks/kubectl-commands/coder-workstations-role-binding.yaml. Exiting..."; exit 1; }
-./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role.yaml || { print_red "Error ./azure-aks/kubectl-commands/applying coder-pods-role.yaml. Exiting..."; exit 1; }
-./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role-binding.yaml || { print_red "Error applying ./azure-aks/kubectl-commands/coder-pods-role-binding.yaml. Exiting..."; exit 1; }
-
+./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-role-binding.yaml 
+./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-workstations-role.yaml 
+./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-workstations-role-binding.yaml
+./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role.yaml 
+./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role-binding.yaml 
 
 print_green "Script finished successfully!"
 
