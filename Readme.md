@@ -22,4 +22,8 @@ Each subfolder in this repo is for a different platform.
 
 In order to make this demo "1 click apply", I am using an anti-pattern where I create the k8s cluster and deploy in the same repo. This is a [known](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs#stacking-with-managed-kubernetes-cluster-resources) anti-pattern. The consequence is that you can get authentication errors while trying to update the namespace or helm charts. For the most part, things have "just worked" for me. You can fix this by file mounting a kubeconfig (ovhcloud-k8s shows how to do this).
 
-![zure kubcert image](image.png)
+![zure kubcert image](./docs/image.png)
+
+## once the install is finished you can launch the code app by clicking on the below IP
+
+![Alt text](./docs/image-1.png)
