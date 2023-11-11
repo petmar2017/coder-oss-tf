@@ -27,7 +27,7 @@
 
   resource "azurerm_resource_group" "coder" {
     name     = "coder-resources"
-    location = "Central US"
+    location = "East US"
   }
 
   resource "azurerm_kubernetes_cluster" "coder" {

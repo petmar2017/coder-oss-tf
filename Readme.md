@@ -2,14 +2,14 @@
 
 The purpose of this repo is to demonstrate how remote development environments work using [Coder's OSS product](https://github.com/coder/coder). This repo should not be used for production use cases, but simply a proof-of-concept for what coding-in-a-browser feels like using Coder.
 
-## setup
-
-run ./setup/dev_container_setup.sh from the root
 
 ## original artical:
 
 https://medium.com/@elliotgraebert/laptop-development-is-dead-why-remote-development-is-the-future-f92ce103fd13
 
+
+## setup
+run ./setup/aks_coder_setup.sh from the root
 
 ## once the install is finished you can launch the code app by clicking on the below IP
 

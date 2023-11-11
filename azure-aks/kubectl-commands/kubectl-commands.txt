@@ -1,0 +1,9 @@
+kubectl create namespace coder-workstations
+
+kubectl apply -f coder-workstations-role.yaml
+
+kubectl apply -f coder-workstations-role-binding.yaml
+
+kubectl apply -f coder-pods-role.yaml
+
+kubectl apply -f coder-pods-role-binding.yaml
