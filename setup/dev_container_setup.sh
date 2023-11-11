@@ -36,8 +36,17 @@ else
     print_green "Already logged into Azure."
 fi
 
-# Change directory to where Terraform files are stored.
-cd ../azure-aks
+# Check if the azure-aks directory exists
+if [ -d "./azure-aks" ]; then
+    # If it exists, change to that directory and print a success message
+    cd ./azure-aks
+    print_green "Successfully changed directory to ../azure-aks"
+else
+    # If it does not exist, print an error message and advise to run from the root directory
+    print_red "Error: ../azure-aks directory does not exist. Please ensure the install script is run from the root directory."
+    # Exit the script with a non-zero status
+    exit 1
+fi
 
 # Initialize Terraform in the current directory.
 print_green "Initializing Terraform..."
