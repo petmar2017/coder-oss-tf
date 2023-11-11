@@ -110,5 +110,23 @@ fi
 ./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role.yaml 
 ./bin/kubectl apply -f ./azure-aks/kubectl-commands/coder-pods-role-binding.yaml 
 
+
+# Retrieve the external IP of the 'coder' service
+external_ip=$(kubectl get service coder --namespace coder -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+# Check if the external IP is not empty
+if [ -n "$external_ip" ]; then
+    # Display the external IP in green with ###### around it
+    print_green "############"
+    print_green "######"
+    print_green "###### you can access the Coder cluster http://$external_ip/workspaces ######"
+    print_green "######"
+    print_green "######"
+    print_green "############"
+else
+    # If the IP is empty, display a message
+    print_green "###### IP not found ######"
+fi
+
 print_green "Script finished successfully!"
 

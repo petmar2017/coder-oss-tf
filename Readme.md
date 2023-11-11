@@ -19,6 +19,21 @@ run ./setup/aks_coder_setup.sh from the root
 ![zure kubcert image](./docs/image-aks-cli-commands.png)
 
 
+once you connected to Coder K8s you need to create a template -> select Starter Templates
+
+![Create template](./docs/image-create-template.png)
+
+
+select Kubernetes
+![Alt text](./docs/image-k8s-template.png)
+
+select "Use Template"
+
+![Alt text](./docs/image-use-template.png)
+
+
+
+
 
 ## original docu
 
